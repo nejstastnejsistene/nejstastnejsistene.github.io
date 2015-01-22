@@ -3,30 +3,45 @@
   <head>
     <title>Peter Johnson</title>
     <meta charset="utf-8">
+    <style>
+      body {
+        background-color: #81d8d0; /* Tiffany Blue! */
+        text-align: center;
+      }
+      #content {
+        display: inline-block;
+        margin: 100px 10px;
+        padding: 50px;
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: left;
+      }
+      @media screen and (max-height: 800px) {
+        #content {
+          margin: 10px;
+        }
+      }
+      h1, p {
+        font-family: Helvetica, arial, freesans, clean, sans-serif;
+        line-height: 1.4;
+      }
+      h1 {
+        color: #222;
+        font-size: 26px;
+      }
+      p {
+        color: #444;
+        font-size: 20px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Peter Johnson</h1>
-    <img src="https://www.gravatar.com/avatar/63a6179a9e45c678f3715f6c1f4ecd67?s=200" alt="">
-    <p>William &amp; Mary Class of 2015 &mdash; Computer Science and Mathemtacics</p>
-    <p><a href="mailto:peter@peterjohnson.io">peter@peterjohnson.io</a></p>
-    <p>
-      <q>I'm Peter, and I program.</q>
-      &mdash; Nathan Schaaf
-    </p>
-    <h3>Three Facts</h3>
-    <ul>
-      <li>I enjoy running and have completed three marathons to date.</li>
-      <li>I'm interning at <a href="https://www.fogcreek.com/">Fog Creek Software</a> for Summer 2014!</li>
-      <li>I bought this domain out of fear of relying on an email address under a domain I don't have control of.</li>
-    </ul>
-    <h3>Links</h3>
-    <ul>
-      <li><a href="https://github.com/nejstastnejsistene">GitHub</a></li>
-      <li><a href="https://github.com/nejstastnejsistene/resume/raw/master/PeterJohnsonResume.pdf">Resume</a></li>
-      <li><a href="https://bannerstalker.com">Bannerstalker</a></li>
-  </ul>
-    <footer>
-      <p><small>Sat Apr  5 15:42:36 EDT 2014</small></p>
-    </footer>
+    <div id="content">
+      <h1>Hi, I'm Peter Johnson.</h1>
+      <p>I enjoy creating things and spending long lengths of time on my feet.</p>
+      <p>I currently attend William &amp; Mary and will graduate this May.</p>
+      <p>Upon graduation, I will work at <a href="https://trello.com">Trello</a> as a <a href="https://en.wikipedia.org/wiki/Member_of_technical_staff">Member of Technical Staff</a>.
+      <p>I run a <a href="https://bannerstalker.com">small website</a> that helps ease the pain of class registration at W&amp;M.</p>
+      <p>You can reach me at <a href="mailto:peter@peterjohnson.io">peter@peterjohnson.io</a> or check out <a href="https://github.com/nejstastnejsistene">my GitHub</a>.</p>
+    </div>
   </body>
 </html>
