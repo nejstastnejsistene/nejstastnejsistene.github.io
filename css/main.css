@@ -1,0 +1,35 @@
+body {
+  background-color: #81d8d0; /* Tiffany Blue! */
+  text-align: center;
+}
+#content {
+  display: inline-block;
+  margin: 100px 10px;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+@media screen and (max-height: 800px) {
+  #content {
+    margin: 10px;
+  }
+}
+h1, p {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4;
+}
+h1 {
+  color: #222;
+  font-size: 26px;
+}
+h3 {
+  color: #222;
+  font-size: 22px;
+}
+p {
+  color: #444;
+  font-size: 20px;
+}
+img.puppies {
+    max-width: 100%;
+}
