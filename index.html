@@ -8,11 +8,38 @@
   <body>
     <div id="content">
       <h1>Hi, I'm Peter Johnson.</h1>
-      <p>I enjoy building things and spending long lengths of time on my feet.</p>
-      <p>I graduated from William &amp; Mary this May as part of the Class of 2015.</p>
-      <p>Now, I'm working at <a href="https://trello.com">Trello</a> in NYC. <!--Sometimes I see <a href="puppies.html">puppies</a> on my way to work!--></p>
-      <p>I run a <a href="https://bannerstalker.com">small website</a> that helps ease the pain of class registration at W&amp;M.</p>
+      <p>I enjoy building things and going on adventures.</p>
+      <p>I work at <a href="https://trello.com">Trello</a> in NYC. Sometimes I see <a href="puppies.html">puppies</a> on my way to work!</p>
       <p>You can reach me at <a href="mailto:peter@peterjohnson.io">peter@peterjohnson.io</a> or check out <a href="https://github.com/nejstastnejsistene">my GitHub</a>.</p>
+      <br>
+      <p>I run a <a href="https://bannerstalker.com">small website</a> that helps ease the pain of class registration at W&amp;M.</p>
+      <p>Having trouble coming up with placeholder names? <a href="https://whats-in-a-name.peterjohnson.io" id="random-name">Try this.</a></p>
     </div>
+    <script>
+      function randomName(next) {
+        var req = new XMLHttpRequest();
+        req.addEventListener("load", function() {
+          next(this.responseText);
+        });
+        req.open("GET", "https://whats-in-a-name.peterjohnson.io");
+        req.send();
+      }
+      function transition(element, text) {
+        if (element.innerHTML == text) {
+          return;
+        } else if (text.startsWith(element.innerHTML)) {
+          element.innerHTML += text.charAt(element.innerHTML.length);
+        } else {
+          element.innerHTML = element.innerHTML.slice(0, -1);
+        }
+        setTimeout(function() {
+          transition(element, text);
+        }, 100);
+      }
+      randomName(function(name) {
+        var link = document.getElementById("random-name");
+        transition(link, "Try \"" + name + ".\"");
+      });
+    </script>
   </body>
 </html>

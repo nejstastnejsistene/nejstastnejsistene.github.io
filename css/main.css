@@ -1,20 +1,10 @@
 body {
-  background-color: #81d8d0; /* Tiffany Blue! */
-  text-align: center;
+  background-color: lightcyan;
 }
 #content {
-  display: inline-block;
-  margin: 100px 10px;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
-  text-align: left;
+  padding: 100px;
 }
-@media screen and (max-height: 800px) {
-  #content {
-    margin: 10px;
-  }
-}
-h1, p {
+h1, h3, p {
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   line-height: 1.4;
 }
@@ -24,11 +14,11 @@ h1 {
 }
 h3 {
   color: #222;
-  font-size: 22px;
+  font-size: 20px;
 }
 p {
   color: #444;
-  font-size: 20px;
+  font-size: 18px;
 }
 img.puppies {
     max-width: 100%;
