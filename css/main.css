@@ -20,6 +20,6 @@ p {
   color: #444;
   font-size: 18px;
 }
-img.puppies {
-    max-width: 100%;
+.puppies {
+    max-width: 50%;
 }
