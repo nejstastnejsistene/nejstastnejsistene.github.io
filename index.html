@@ -8,35 +8,40 @@
   <body>
     <div id="content">
       <h1>Hi, I'm Peter Johnson.</h1>
-      <p>I run a <a href="https://bannerstalker.com">small website</a> that helps ease the pain of class registration at W&amp;M.</p>
-      <p>Having trouble coming up with placeholder names? <a href="https://whats-in-a-name.peterjohnson.io" id="random-name">Try this.</a></p>
-      <p>You can reach me at <a href="mailto:peter@peterjohnson.io">peter@peterjohnson.io</a> or check out <a href="https://github.com/nejstastnejsistene">my GitHub</a>.</p>
+      <p>I run a <a href="https://bannerstalker.com">small website</a> that helps ease the pain of class registration at William &amp; Mary.</p>
+      <p>You can reach me at <a id="random-email" href="mailto:peter@peterjohnson.io">peter@peterjohnson.io</a>.</p>
     </div>
     <script>
-      function randomName(next) {
+      function randomEmail(next) {
         var req = new XMLHttpRequest();
         req.addEventListener("load", function() {
-          next(this.responseText);
+          next(this.responseText.replace(" ", ".").toLowerCase());
         });
         req.open("GET", "https://whats-in-a-name.peterjohnson.io");
         req.send();
       }
-      function transition(element, text) {
-        if (element.innerHTML == text) {
+      function transition(element, email) {
+        if (element.innerHTML == email) {
+          setTimeout(startTransition, 2000);
           return;
-        } else if (text.startsWith(element.innerHTML)) {
-          element.innerHTML += text.charAt(element.innerHTML.length);
+        }
+        if (email.startsWith(element.innerHTML)) {
+          element.innerHTML += email.charAt(element.innerHTML.length);
+          element.href = "mailto:" + email;
         } else {
           element.innerHTML = element.innerHTML.slice(0, -1);
         }
         setTimeout(function() {
-          transition(element, text);
-        }, 100);
+          transition(element, email);
+        }, 50);
       }
-      randomName(function(name) {
-        var link = document.getElementById("random-name");
-        transition(link, "Try \"" + name + ".\"");
-      });
+      function startTransition() {
+        randomEmail(function(name) {
+          var element = document.getElementById("random-email");
+          transition(element, name + '@peterjohnson.io');
+        });
+      }
+      startTransition();
     </script>
   </body>
 </html>
